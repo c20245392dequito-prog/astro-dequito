@@ -1,10 +1,11 @@
+
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import About from "./index/sections/About.astro";
+import Contacts from "./index/sections/Contacts.astro";
 ---
 
 <BaseLayout>
-	<section id="about" class="flex min-h-[70vh] flex-col items-center justify-center px-6 text-center">
-		<p class="mb-4 text-sm uppercase tracking-[0.3em] text-red-800 dark:text-red-400">Professional Portfolio</p>
-		<h1 class="text-4xl font-bold text-red-800 dark:text-red-400 md:text-6xl">Jive Miguel Dequito</h1>
-	</section>
+    <About />
+    <Contacts />
 </BaseLayout>

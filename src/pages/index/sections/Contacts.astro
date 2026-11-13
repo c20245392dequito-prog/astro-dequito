@@ -1,0 +1,72 @@
+---
+const contactMethods = [
+  {
+    label: "Email",
+    value: "Ryomen@gmail.com",
+    href: "mailto:Ryomen@gmail.com",
+  },
+  {
+    label: "Phone",
+    value: "09933272908",
+    href: "tel:09933272908",
+  },
+  {
+    label: "Instagram",
+    value: "@jive.miguel",
+    href: "https://instagram.com",
+  },
+  {
+    label: "Location",
+    value: "Victorias City",
+    href: "https://maps.google.com/?q=Victorias+City",
+  },
+];
+
+const quickLinks = ["Brand Strategy", "Web Design", "Creative Direction", "Product Storytelling"];
+---
+
+<section id="contact" class="bg-slate-100 py-20 text-slate-900 dark:bg-gray-950 dark:text-white">
+  <div class="mx-auto max-w-6xl px-6 lg:px-10">
+    <div class="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-white via-cyan-50 to-sky-100 p-8 shadow-[0_20px_60px_rgba(14,116,144,0.12)] dark:border-slate-800 dark:from-gray-900 dark:via-gray-900 dark:to-slate-950 sm:p-10">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div class="max-w-2xl" data-reveal>
+          <p class="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-300">Let’s connect</p>
+          <h2 class="text-4xl font-black tracking-tight sm:text-5xl">Bring your next idea into motion.</h2>
+        </div>
+
+        <a
+          href="mailto:Ryomen@gmail.com"
+          data-reveal
+          class="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5 hover:bg-cyan-600"
+        >
+          Start a project
+        </a>
+      </div>
+
+      <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {contactMethods.map((item) => (
+          <a
+            href={item.href}
+            data-reveal="card"
+            target={item.href.startsWith("http") ? "_blank" : undefined}
+            rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+            class="group rounded-2xl border border-slate-200 bg-white/80 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800/80"
+          >
+            <span class="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">{item.label}</span>
+            <strong class="text-lg font-semibold text-slate-900 transition-colors group-hover:text-cyan-700 dark:text-white">
+              {item.value}
+            </strong>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        {quickLinks.map((tag) => (
+          <span class="rounded-full border border-slate-300 bg-white px-3 py-2 text-xs font-medium uppercase tracking-[0.15em] text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
